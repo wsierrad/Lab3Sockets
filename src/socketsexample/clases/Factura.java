@@ -22,7 +22,7 @@ public class Factura {
 
     public Factura(ArrayList<Products> productos,
             double subtotal, double total, int articulosComprados,
-            Cajeros cajeros, Clientes cliente, int puntos) {
+            Cajeros cajeros, Clientes cliente) {
         Supermercado s = new Supermercado();
         this.supermercado = s.getName();
         this.productos = productos;
@@ -31,8 +31,8 @@ public class Factura {
         this.articulosComprados = articulosComprados;
         this.cajeros = cajeros;
         this.cliente = cliente;
-        this.puntos = puntos;
-        cliente.addPuntos(puntos);
+        this.puntos = (int) (this.total/10000);
+        this.cliente.addPuntos(this.puntos);
     }
     
     
