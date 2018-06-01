@@ -50,6 +50,63 @@ public class Supermercado {
         return name;
     }
     
+    public void porcentajeVentasProductos(){
+        double total = 0.0;
+        for (Products producto : productos) {
+            total += producto.getPrecio();
+        }
+        ArrayList pro = new ArrayList();
+        
+        
+        for (Products producto : productos) {
+            int contador = 0;
+            double subtotal = 0;
+            Products produ = null;
+            if(!pro.contains(producto.getCodigo())){
+                pro.add(producto.getCodigo());
+                produ = producto;
+                for (Products prod : productos) {
+                    if(pro.contains(prod.getCodigo())){
+                        contador ++;
+                    }
+                }
+                subtotal = produ.getPrecio()*contador;
+                System.out.println(produ.getCodigo() + " " + 
+                        "Precio Unitario: " + produ.getPrecio() + 
+                        " Total: " + subtotal + " Porcentaje: "
+                                + (subtotal/total));
+            }
+        }
+    }
+    
+    public void porcentajeVentasCajeros(){
+        double total = 0.0;
+        for (Products producto : productos) {
+            total += producto.getPrecio();
+        }
+        ArrayList<String> pro = new ArrayList();
+        
+        
+        for (Products producto : productos) {
+            int contador = 0;
+            double subtotal = 0;
+            Products produ = null;
+            if(!pro.contains(producto.getCajero().getCodigo())){
+                pro.add(producto.getCajero().getCodigo());
+                produ = producto;
+                for (Products prod : productos) {
+                    if(pro.contains(prod.getCajero().getCodigo())){
+                        subtotal += prod.getPrecio();
+                    }
+                }
+                System.out.println("Codigo: " + pro.get(contador) + 
+                        "vendido: " + subtotal + " porcentaje: " +
+                        (subtotal/total));
+                contador ++;
+            }
+        }
+    }
+    
     
     
     
