@@ -14,12 +14,15 @@ public class Products {
     private int codigo;
     private int cantidad;
     private double precio;
+    private Cajeros cajero;
 
-    public Products(String nombre, int codigo, int cantidad, double precio) {
+    public Products(String nombre, int codigo, int cantidad, double precio,
+            Cajeros cajero) {
         this.nombre = nombre;
         this.codigo = codigo;
         this.cantidad = cantidad;
         this.precio = precio;
+        this.cajero = cajero;
     }
 
     public String getNombre() {
@@ -53,6 +56,9 @@ public class Products {
     public void setPrecio(double precio) {
         this.precio = precio;
     }
-    
+
+    public Cajeros getCajero() {
+        return cajero;
+    }
       
 }

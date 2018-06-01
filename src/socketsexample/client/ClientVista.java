@@ -32,6 +32,9 @@ public class ClientVista extends Application {
 
         Button btn = new Button();
         btn.setText("Enviar");
+        Button agregar = new Button();
+        agregar.setText("Agregar");
+        
         btn.setOnAction(new EventHandler<ActionEvent>() {
             
             @Override
@@ -45,6 +48,7 @@ public class ClientVista extends Application {
         root.getChildren().add(mensajes);
         root.getChildren().add(msg);
         root.getChildren().add(btn);
+        root.getChildren().add(agregar);
         
         HBox prin = new HBox();
         prin.getChildren().add(usuarios);
