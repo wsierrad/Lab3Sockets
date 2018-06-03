@@ -5,6 +5,7 @@
  */
 package socketsexample.clases;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 /**
  *
@@ -91,10 +92,8 @@ public class Supermercado {
         for (Products producto : productos) {
             int contador = 0;
             double subtotal = 0;
-            Products produ = null;
             if(!pro.contains(producto.getCajero().getCodigo())){
                 pro.add(producto.getCajero().getCodigo());
-                produ = producto;
                 for (Products prod : productos) {
                     if(pro.contains(prod.getCajero().getCodigo())){
                         subtotal += prod.getPrecio();
@@ -108,11 +107,36 @@ public class Supermercado {
         }
     }
     
-    public void ventasPorMes(){
-        double total = 0.0;
-        
+    public void ventasPorMes(){   
+        ArrayList pro = new ArrayList();
         for (Products producto : productos) {
-            producto.getFecha();
+            int contador = 0;
+            double subtotal = 0.0;
+            if(!pro.contains(producto.getFecha().get(Calendar.YEAR))){
+                pro.add(producto.getFecha().get(Calendar.YEAR));
+                System.out.println("Anio: " + producto.getFecha().get(Calendar.YEAR));
+                for (Products prod : productos) {
+                    if(pro.contains(prod.getFecha().get(Calendar.YEAR))){
+                        for (Products produ : productos) {
+                            if(!pro.contains(produ.getFecha().get(Calendar.MONTH))){
+                                pro.add(produ.getFecha().get(Calendar.MONTH));
+                                System.out.println("Mes: " + produ.getFecha().get(Calendar.MONTH));
+                                for (Products prod2 : productos) {
+                                    if(pro.contains(prod2.getFecha().get(Calendar.MONTH))){
+                                        subtotal += prod2.getPrecio();
+                                    }
+                                
+                                
+                                }
+                                System.out.println(subtotal);
+                            }
+                        }
+                    }
+                }
+            }
+            subtotal = 0;
+            pro.clear();
+            
         }
     }
     

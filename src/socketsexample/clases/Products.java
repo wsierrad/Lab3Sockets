@@ -5,7 +5,7 @@
  */
 package socketsexample.clases;
 
-import java.util.Date;
+import java.util.GregorianCalendar;
 
 /**
  *
@@ -17,7 +17,7 @@ public class Products {
     private int cantidad;
     private double precio;
     private Cajeros cajero;
-    private Date fecha;
+    private GregorianCalendar fecha;
 
     public Products(String nombre, int codigo, int cantidad, double precio,
             Cajeros cajero) {
@@ -26,7 +26,7 @@ public class Products {
         this.cantidad = cantidad;
         this.precio = precio;
         this.cajero = cajero;
-        this.fecha = new Date();
+        this.fecha = new GregorianCalendar();
     }
 
     public String getNombre() {
@@ -65,7 +65,7 @@ public class Products {
         return cajero;
     }
 
-    public Date getFecha() {
+    public GregorianCalendar getFecha() {
         return fecha;
     }
       
