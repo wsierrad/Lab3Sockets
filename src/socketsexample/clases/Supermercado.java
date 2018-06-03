@@ -5,6 +5,7 @@
  */
 package socketsexample.clases;
 import java.util.ArrayList;
+import java.util.Date;
 /**
  *
  * @author Juan_Ardila
@@ -107,7 +108,13 @@ public class Supermercado {
         }
     }
     
-    
+    public void ventasPorMes(){
+        double total = 0.0;
+        
+        for (Products producto : productos) {
+            producto.getFecha();
+        }
+    }
     
     
 }

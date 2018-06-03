@@ -5,6 +5,8 @@
  */
 package socketsexample.clases;
 
+import java.util.Date;
+
 /**
  *
  * @author Juan_Ardila
@@ -15,6 +17,7 @@ public class Products {
     private int cantidad;
     private double precio;
     private Cajeros cajero;
+    private Date fecha;
 
     public Products(String nombre, int codigo, int cantidad, double precio,
             Cajeros cajero) {
@@ -23,6 +26,7 @@ public class Products {
         this.cantidad = cantidad;
         this.precio = precio;
         this.cajero = cajero;
+        this.fecha = new Date();
     }
 
     public String getNombre() {
@@ -59,6 +63,10 @@ public class Products {
 
     public Cajeros getCajero() {
         return cajero;
+    }
+
+    public Date getFecha() {
+        return fecha;
     }
       
 }
