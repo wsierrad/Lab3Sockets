@@ -72,7 +72,7 @@ public class Products {
         return fecha;
     }
 
-    public ArrayList getMeta() {
+    public ArrayList<Meta> getMeta() {
         return meta;
     }
 

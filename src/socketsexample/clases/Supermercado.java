@@ -141,10 +141,17 @@ public class Supermercado {
     }
     
     public void termometro(int month, int year){
+        int contador =0;
+        System.out.println("Producto / ventas en el mes / codigo");
         for (Products producto : productos) {
             for(int i = 0; i < producto.getMeta().size(); i++){
-                if(20 == year){
-                    
+                if(producto.getMeta().get(i).getFecha().get(Calendar.YEAR) == year
+                        && producto.getMeta().get(i).getFecha().get(Calendar.MONTH) == month){
+                    contador ++;
+                }
+                if(contador >0){
+                    System.out.println(producto.getCodigo() + " " + contador + " "
+                                + producto.getMeta().get(i).getMeta());
                 }
             }
         }
