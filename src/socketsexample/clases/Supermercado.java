@@ -142,7 +142,7 @@ public class Supermercado {
     
     public void termometro(int month, int year){
         int contador =0;
-        System.out.println("Producto / ventas en el mes / codigo");
+        System.out.println("Producto / ventas en el mes / codigo / porcentaje");
         for (Products producto : productos) {
             for(int i = 0; i < producto.getMeta().size(); i++){
                 if(producto.getMeta().get(i).getFecha().get(Calendar.YEAR) == year
@@ -151,7 +151,8 @@ public class Supermercado {
                 }
                 if(contador >0){
                     System.out.println(producto.getCodigo() + " " + contador + " "
-                                + producto.getMeta().get(i).getMeta());
+                                + producto.getMeta().get(i).getMeta() + 
+                                " " + (contador/producto.getMeta().get(i).getMeta())*100);
                 }
             }
         }
