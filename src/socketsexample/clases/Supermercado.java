@@ -107,7 +107,7 @@ public class Supermercado {
         }
     }
     
-    public void ventasPorMes(){   
+    public void ventasPorMes(){  
         ArrayList pro = new ArrayList();
         for (Products producto : productos) {
             int contador = 0;
@@ -137,6 +137,16 @@ public class Supermercado {
             subtotal = 0;
             pro.clear();
             
+        }
+    }
+    
+    public void termometro(int month, int year){
+        for (Products producto : productos) {
+            for(int i = 0; i < producto.getMeta().size(); i++){
+                if(20 == year){
+                    
+                }
+            }
         }
     }
     

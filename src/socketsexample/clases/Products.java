@@ -5,6 +5,7 @@
  */
 package socketsexample.clases;
 
+import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
 /**
@@ -15,18 +16,20 @@ public class Products {
     private String nombre;
     private int codigo;
     private int cantidad;
+    private ArrayList<Meta> meta;
     private double precio;
     private Cajeros cajero;
     private GregorianCalendar fecha;
 
     public Products(String nombre, int codigo, int cantidad, double precio,
-            Cajeros cajero) {
+            Cajeros cajero, Meta meta) {
         this.nombre = nombre;
         this.codigo = codigo;
         this.cantidad = cantidad;
         this.precio = precio;
         this.cajero = cajero;
         this.fecha = new GregorianCalendar();
+        this.meta = new ArrayList();
     }
 
     public String getNombre() {
@@ -67,6 +70,14 @@ public class Products {
 
     public GregorianCalendar getFecha() {
         return fecha;
+    }
+
+    public ArrayList getMeta() {
+        return meta;
+    }
+
+    public void agregarMeta(Meta meta){
+        this.meta.add(meta);
     }
       
 }
